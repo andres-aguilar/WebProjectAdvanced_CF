@@ -2,6 +2,11 @@
 @import "./modules/_variables.scss";
 @import "./modules/_mixins.scss";
 
+html, body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 0px;
+}
+
 img {
   max-width: 100%;
 }
@@ -14,6 +19,7 @@ figure {
     padding: $large-padding;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 5px;
     font-size: 1.7em;
     position: absolute;
     width: auto;
@@ -29,20 +35,31 @@ figure {
   grid-template-columns: repeat(12,1fr);
 }
 
-.main-text {
-  grid-area: title;
-}
-.main-image {
-  grid-area: image;
-}
-
 .grid-main-area {
   display: grid;
+  margin-top: $big-margin-top;
   grid-template-columns: repeat(9,1fr);
   grid-template-areas:
   "title title title title title title title title title"
   "image image image image image image image image image"
   ;
+  .main-text {
+    grid-area: title;
+    font-size: $medium;
+    font-weight: 200;
+    line-height: 1.5em;
+    text-align: justify;
+    margin-right: 1em;
+    h1 {
+      font-weight: inherit;
+      font-size: $large;
+      letter-spacing: 0.2em;
+      line-height: 1.3em;
+    }
+  }
+  .main-image {
+    grid-area: image;
+  }
 }
 
 .container {
