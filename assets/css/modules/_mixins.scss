@@ -19,3 +19,30 @@
   left: 0px;
   right: 0px;
 }
+
+@mixin caption {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.7em;
+  position: absolute;
+  width: auto;
+  bottom: 0px;
+  left: 10px;
+  z-index: 10;
+  color: rgba($blue, 0.8);
+  @include text-center;
+}
+@mixin main-text {
+  font-size: $medium;
+  font-weight: 200;
+  line-height: 1.5em;
+  text-align: justify;
+  margin-right: 1em;
+  h1, h2 {
+    font-weight: inherit;
+    font-size: $large;
+    letter-spacing: 0.2em;
+    line-height: 1.3em;
+  }
+}

@@ -17,17 +17,7 @@ figure {
 
   figcaption {
     padding: $large-padding;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 1.7em;
-    position: absolute;
-    width: auto;
-    bottom: 0px;
-    left: 10px;
-    z-index: 10;
-    color: rgba($blue, 0.8);
-    @include text-center;
+    @include caption;
   }
 }
 .grid {
@@ -46,17 +36,7 @@ figure {
   ;
   .main-text {
     grid-area: title;
-    font-size: $medium;
-    font-weight: 200;
-    line-height: 1.5em;
-    text-align: justify;
-    margin-right: 1em;
-    h1 {
-      font-weight: inherit;
-      font-size: $large;
-      letter-spacing: 0.2em;
-      line-height: 1.3em;
-    }
+    @include main-text;
   }
   .main-image {
     grid-area: image;
@@ -76,6 +56,24 @@ figure {
   &.paralax {
     background-image: url(../../public/images/2.jpg);
     background-attachment: fixed;
+    position: relative;
+    margin-right: 0px;
+    margin-left: 0px;
+    p {
+      @include caption;
+      background-color: rgba($blue, 0.8);
+      display: block;
+      width: 100%;
+      left: 0px;
+      box-sizing: border-box;
+      text-align: right;
+      color: white;
+      span {
+        font-size: 0.5em;
+        display: block;
+        margin-top: 5px;
+      }
+    }
   }
 }
 
@@ -100,6 +98,39 @@ figure {
     transition: all 0.15s ease-out;
   }
   &:hover::before {height: 100%;}
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.mission {
+  align-items: center;
+  .container{
+    @include main-text;
+    font-size: 1.1em;
+    figure {
+      float: right;
+      margin-left: 20px;
+    }
+    p {
+      line-height: 2em;
+      &:nth-of-type(1) {
+        margin-bottom: 3em;
+        position: relative;
+
+        &::after {
+          content: '';
+          background-color: $blue;
+          position: absolute;
+          bottom: -1.5em;
+          height: 5px;
+          width: 70%;
+          z-index: -1;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 960px) {
