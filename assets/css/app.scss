@@ -104,6 +104,19 @@ figure {
   min-height: 100vh;
 }
 
+.slider {
+  header {
+    background-color: $blue;
+    color: $white;
+    padding: $large-padding;
+
+    h2 {
+      margin: 0px;
+    }
+  }
+}
+
+
 .mission {
   align-items: center;
   .container{
@@ -157,6 +170,15 @@ figure {
   .grid-main-area {
     grid-template-areas: "title title title image image image image image image";
   }
+
+  .slider {
+    align-items: center;
+    header {
+      transform: translateX(100px);
+
+    }
+  }
+
   .social {
     a {
       display: inline-block;
