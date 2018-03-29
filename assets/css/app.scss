@@ -105,10 +105,17 @@ figure {
 }
 
 .slider {
+  .main-image {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
   header {
     background-color: $blue;
     color: $white;
     padding: $large-padding;
+    z-index: 10;
+    position: relative;
 
     h2 {
       margin: 0px;
@@ -131,6 +138,19 @@ figure {
   }
 }
 
+#slider-text-content {
+  transition: all 0.6s ease-out;
+  &.hide {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+#slider-image {
+  transition: all 0.6s ease-out;
+  &.hide {
+    opacity: 0;
+  }
+}
 
 .mission {
   align-items: center;
