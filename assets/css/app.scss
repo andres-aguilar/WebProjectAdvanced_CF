@@ -108,6 +108,7 @@ figure {
   .controls {
     text-align: right;
     margin-bottom: 20px;
+    display: none;
     .rigth-arrow, .left-arrow {
       height: 50px;
       transition: all 0.2s ease-out;
