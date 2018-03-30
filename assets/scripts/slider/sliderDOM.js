@@ -1,4 +1,5 @@
 import Slider from './slider';
+import elements from './elements';
 
 let sliderTitle = document.querySelector("#slider-title");
 let sliderSubTitle = document.querySelector("#slider-subtitle");
@@ -6,25 +7,11 @@ let sliderText = document.querySelector("#slider-text");
 let sliderImage = document.querySelector("#slider-image");
 let textContent = document.querySelector("#slider-text-content");
 
+let rigthArrow = document.querySelector(".rigth-arrow");
+let leftArrow = document.querySelector(".left-arrow");
+
 let slider = new Slider({
-  elements: [
-    {
-      title: 'Lorem ipsum',
-      subtitle: 'Plats',
-      image: 'https://images.pexels.com/photos/247932/pexels-photo-247932.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    }, {
-      title: 'Lorem ipsum',
-      subtitle: 'Ipsum',
-      image: 'https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    }, {
-      title: 'Lorem ipsum 2',
-      subtitle: 'Ipsum 2',
-      image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    }
-  ],
+  elements,
   animationFn: function(element) {
     textContent.classList.add("hide");
     sliderImage.classList.add("hide");
@@ -39,7 +26,11 @@ let slider = new Slider({
       sliderImage.classList.remove("hide");
     }, 600);
   },
-  speed: 3000
+  speed: 5000
 });
 
 slider.play();
+
+// Slider navigation
+rigthArrow.addEventListener('click', slider.next);
+leftArrow.addEventListener('click', slider.prev);
