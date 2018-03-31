@@ -4,7 +4,9 @@
 
 html, body {
   font-family: 'Source Sans Pro', sans-serif;
-  margin-top: 0px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 img {
@@ -198,6 +200,13 @@ figure {
     }
   }
 }
+
+#mapa {
+  width: 100%;
+  min-height: 600px;
+  margin-top: $big-margin-top;
+}
+
 
 .social {
   margin-top: $big-margin-top;
