@@ -13,13 +13,9 @@ module.exports = {
       path: path.join(__dirname, '..'),
       filename: 'dist/scripts/bundle.js'
     },
-    mode: 'development',
     plugins: [htmlWebpackPlugin],
     module: {
       rules: [{
-          test: /\.scss$/,
-          use: ['style-loader', 'css-loader', 'sass-loader']
-        }, {
           test: /\.(png|jpg|gif)$/,
           loader: 'url-loader'
         }]
